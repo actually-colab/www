@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, css } from "aphrodite";
 import { GoogleLoginResponse } from "react-google-login";
 
+import { openDesktop } from "../utils/redirect";
 import { GoogleSignInButton } from "../components";
 
 const styles = StyleSheet.create({
@@ -15,7 +16,13 @@ const styles = StyleSheet.create({
 
 const LoginPage: React.FC = () => {
   const onGoogleSignInSuccess = React.useCallback((payload: GoogleLoginResponse) => {
-    console.log(payload);
+    console.log(payload.profileObj);
+
+    openDesktop({
+      token: payload.tokenId,
+      email: payload.profileObj.email,
+      name: payload.profileObj.name
+    });
   }, []);
 
   const onGoogleSignInFailure = React.useCallback((error: any) => {
