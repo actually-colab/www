@@ -32,7 +32,7 @@ const LandingPage: React.FC = () => {
       <a className={css(styles.title)} href="https://github.com/actually-colab">
         actually colab
       </a>
-      <p>Because Google Colab isn't actually collaborative</p>
+      <p>because Google Colab isn't actually collaborative</p>
       <img className={css(styles.screenshot)} src={screenshot} alt="Actually Colab" />
     </div>
   );
