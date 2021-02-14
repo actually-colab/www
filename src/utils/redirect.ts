@@ -1,7 +1,5 @@
 export type DesktopRedirectPayload = {
   token: string;
-  email: string;
-  name: string;
 };
 
 /**
@@ -9,7 +7,7 @@ export type DesktopRedirectPayload = {
  */
 export const openDesktop = (payload: DesktopRedirectPayload) => {
   const link = document.createElement("a");
-  link.href = `actuallycolab://token=${payload.token}&email=${payload.email}&name=${payload.name}`;
+  link.href = `actuallycolab://token=${payload.token}`;
   document.body.appendChild(link);
   link.click();
 };

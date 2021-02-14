@@ -49,12 +49,8 @@ const LoginPage: React.FC = () => {
   const [redirectPayload, setRedirectPayload] = React.useState<DesktopRedirectPayload | null>(null);
 
   const onGoogleSignInSuccess = React.useCallback((payload: GoogleLoginResponse) => {
-    console.log(payload.profileObj);
-
     const minimalPayload: DesktopRedirectPayload = {
-      token: payload.tokenId,
-      email: payload.profileObj.email,
-      name: payload.profileObj.name
+      token: payload.tokenId
     };
 
     setRedirectPayload(minimalPayload);
