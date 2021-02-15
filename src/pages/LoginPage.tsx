@@ -77,6 +77,19 @@ const LoginPage: React.FC = () => {
               <GoogleSignInButton onSuccess={onGoogleSignInSuccess} onFailure={onGoogleSignInFailure} />
             </div>
           )}
+
+          {process.env.NODE_ENV === "development" && (
+            <p
+              className={css(styles.redirectText)}
+              onClick={() =>
+                openDesktop({
+                  token: process.env.REACT_APP_DEV_TOKEN ?? ""
+                })
+              }
+            >
+              click here to use the development token
+            </p>
+          )}
         </div>
       </div>
     </div>
