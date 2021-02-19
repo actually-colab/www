@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   screenshot: {
     maxWidth: "100%",
-    maxHeight: "100%",
+    maxHeight: "60vh",
     objectFit: "contain"
   }
 });
