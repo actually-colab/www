@@ -2,19 +2,16 @@ import React from "react";
 import { StyleSheet, css } from "aphrodite";
 import { useMediaQuery } from "react-responsive";
 
-import screenshot from "../assets/screenshot.png";
+import ScreenshotLong from "../assets/screenshot-long.png";
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
-    display: "flex",
-    backgroundColor: "#FFF",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
+    backgroundColor: "#FFF"
   },
+  containerMobile: {},
   contentBackground: {
-    margin: "10%",
+    margin: 80,
+    display: "flex",
     background: "-webkit-linear-gradient(top left, #f55673, #E2CC52)",
     borderRadius: 20
   },
@@ -48,23 +45,22 @@ const styles = StyleSheet.create({
   },
   screenshot: {
     maxWidth: "100%",
-    maxHeight: "60vh",
     objectFit: "contain"
   }
 });
 
 const LandingPage: React.FC = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 760px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   return (
-    <div className={css(styles.container)}>
+    <div className={css(styles.container, isMobile && styles.containerMobile)}>
       <div className={css(styles.contentBackground, isMobile && styles.contentBackgroundMobile)}>
         <div className={css(styles.content, isMobile && styles.contentMobile)}>
           <a className={css(styles.title, isMobile && styles.titleMobile)} href="https://github.com/actually-colab">
             actually colab
           </a>
           <p>because Google Colab isn't actually collaborative</p>
-          <img className={css(styles.screenshot)} src={screenshot} alt="Actually Colab" />
+          <img className={css(styles.screenshot)} src={ScreenshotLong} alt="Actually Colab" />
         </div>
       </div>
     </div>
