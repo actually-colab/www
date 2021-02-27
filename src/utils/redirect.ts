@@ -6,8 +6,5 @@ export type DesktopRedirectPayload = {
  * Open the desktop application with the payload
  */
 export const openDesktop = (payload: DesktopRedirectPayload) => {
-  const link = document.createElement("a");
-  link.href = `actuallycolab://token=${payload.token}`;
-  document.body.appendChild(link);
-  link.click();
+  window.open(`actuallycolab://token=${payload.token}`, "_self");
 };
