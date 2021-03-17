@@ -6,7 +6,7 @@ Website landing page and authentication redirect for [@actually-colab](https://g
 
 ## Dev Setup
 
-1. Create a file `.env.local` and set the variables in `.env` to the development values
+1. Create a file `.env.development.local` and set the variables in `.env` to the development values
 
 ## Prod Setup
 
