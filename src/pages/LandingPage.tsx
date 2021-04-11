@@ -56,7 +56,7 @@ const LandingPage: React.FC = () => {
     <div className={css(styles.container, isMobile && styles.containerMobile)}>
       <div className={css(styles.contentBackground, isMobile && styles.contentBackgroundMobile)}>
         <div className={css(styles.content, isMobile && styles.contentMobile)}>
-          <a className={css(styles.title, isMobile && styles.titleMobile)} href="https://github.com/actually-colab">
+          <a className={css(styles.title, isMobile && styles.titleMobile)} href="https://app.actuallycolab.org/">
             actually colab
           </a>
           <p>because Google Colab isn't actually collaborative</p>
