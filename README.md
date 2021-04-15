@@ -1,6 +1,6 @@
 # www
 
-![Commit Validation](https://github.com/actually-colab/www/workflows/Commit%20Validation/badge.svg) ![PR Validation](https://github.com/actually-colab/www/workflows/PR%20Validation/badge.svg) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/actually-colab/www.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/actually-colab/www/context:javascript) [![Lines of Code](https://tokei.rs/b1/github/actually-colab/www)](https://github.com/actually-colab/www)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/079c78be-b496-487e-9488-514132ae71f9/deploy-status)](https://app.netlify.com/sites/actuallycolab/deploys) [![Validation](https://github.com/actually-colab/www/actions/workflows/commit-validation.yml/badge.svg)](https://github.com/actually-colab/www/actions/workflows/commit-validation.yml) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/actually-colab/www.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/actually-colab/www/context:javascript) [![Lines of Code](https://tokei.rs/b1/github/actually-colab/www)](https://github.com/actually-colab/www)
 
 Website landing page and authentication redirect for [@actually-colab](https://github.com/actually-colab)
 
