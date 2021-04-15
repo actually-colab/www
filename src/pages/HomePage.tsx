@@ -8,7 +8,12 @@ import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
 import { openDevpost, openYoutube } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { Footer, GradientBorderContainer, GradientText, Header } from "../components";
-import ScreenshotChat from "../assets/screenshot-chat.png";
+import Screenshot from "../assets/screenshot.png";
+import ChatFeature from "../assets/chat.png";
+import OutputsFeature from "../assets/outputs.png";
+import GatewayFeature from "../assets/gateway.png";
+import ImportFeature from "../assets/import.png";
+import ShareFeature from "../assets/share.png";
 
 const styles = StyleSheet.create({
   container: {
@@ -80,6 +85,63 @@ const styles = StyleSheet.create({
   secondaryTitleTextMobile: {
     fontSize: 24,
   },
+  feature: {
+    marginTop: spacing.DEFAULT * 5,
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+  },
+  featureLeft: {},
+  featureRight: {
+    flexDirection: "row-reverse",
+  },
+  featureMobile: {
+    flexDirection: "column",
+  },
+  featureTextContainer: {
+    flex: 1,
+    padding: spacing.DEFAULT,
+  },
+  featureTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "black",
+  },
+  featureTitleMobile: {
+    fontSize: 16,
+  },
+  featureDescription: {
+    fontSize: 16,
+    color: palette.GRAY,
+  },
+  featureDescriptionMobile: {
+    fontSize: 14,
+  },
+  featureImageContainer: {
+    flex: 1,
+    maxHeight: 300,
+    borderRadius: 20,
+    overflow: "hidden",
+    backgroundColor: palette.BASE_FADED,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+  },
+  featureImageContainerLeft: {
+    marginRight: spacing.DEFAULT,
+  },
+  featureImageContainerRight: {
+    marginLeft: spacing.DEFAULT,
+  },
+  featureImageContainerMobile: {
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  featureImageRounded: {
+    maxWidth: "100%",
+    objectFit: "contain",
+    borderRadius: 20,
+  },
   pricingLabel: {
     marginTop: 40,
     textAlign: "center",
@@ -146,6 +208,39 @@ const styles = StyleSheet.create({
   },
   pricingFeature: {},
 });
+
+const Feature: React.FC<{
+  title: string;
+  description: string;
+  direction: "left" | "right";
+}> = ({ title, description, direction, children }) => {
+  const { isMobile } = React.useContext(MediaQueryContext);
+
+  return (
+    <div
+      className={css(
+        styles.feature,
+        direction === "left" ? styles.featureLeft : styles.featureRight,
+        isMobile && styles.featureMobile
+      )}
+    >
+      <div
+        className={css(
+          styles.featureImageContainer,
+          direction === "left" ? styles.featureImageContainerLeft : styles.featureImageContainerRight,
+          isMobile && styles.featureImageContainerMobile
+        )}
+      >
+        {children}
+      </div>
+
+      <div className={css(styles.featureTextContainer)}>
+        <p className={css(styles.featureTitle, isMobile && styles.featureTitleMobile)}>{title}</p>
+        <p className={css(styles.featureDescription, isMobile && styles.featureDescriptionMobile)}>{description}</p>
+      </div>
+    </div>
+  );
+};
 
 const PricingContainer: React.FC<{
   title: string;
@@ -217,7 +312,7 @@ const HomePage: React.FC = () => {
               </Button>
             </div>
 
-            <img className={css(styles.screenshot)} src={ScreenshotChat} alt="Actually Colab" />
+            <img className={css(styles.screenshot)} src={Screenshot} alt="Actually Colab" />
           </section>
 
           <section
@@ -233,6 +328,46 @@ const HomePage: React.FC = () => {
               our collaboration features but paid our respects to what came before. If you're a Jupyter user, you should
               still feel right at home.
             </p>
+
+            <Feature
+              direction="left"
+              title="Share with just the right amount of access"
+              description="You alone are in control of your notebooks, unless you want to share. We let you choose who can view and edit your notebooks and you can revoke permission at any time."
+            >
+              <img className={css(styles.featureImageRounded)} src={ShareFeature} alt="Sharing" />
+            </Feature>
+
+            <Feature
+              direction="right"
+              title="Chat with your team, fellow students, and instructors"
+              description="Have a question for the instructor? No problem, you can message them via the built-in chat. We have a built-in chat feature because coding together is better than coding alone."
+            >
+              <img className={css(styles.featureImageRounded)} src={ChatFeature} alt="Chat" />
+            </Feature>
+
+            <Feature
+              direction="left"
+              title="View everyone's outputs"
+              description="Sometimes you want to run code yourself, other times you want to see what your instructor or teammate has instead. We let you choose whose outputs you are viewing with the click of a button."
+            >
+              <img className={css(styles.featureImageRounded)} src={OutputsFeature} alt="Outputs" />
+            </Feature>
+
+            <Feature
+              direction="right"
+              title="Import the notebooks you already have"
+              description="Hey we get it, we're not your first Jupyter editor and that's okay. You can import the notebooks, and if you ever need your notebook back you can export them too."
+            >
+              <img className={css(styles.featureImageRounded)} src={ImportFeature} alt="Import" />
+            </Feature>
+
+            <Feature
+              direction="left"
+              title="Use a remote machine when you need raw power your computer can't provide"
+              description="By default we let you run your notebooks on your own computer but sometimes that doesn't cut it. Need a Tesla A100 for Deep Learning? Connect directly to a VM from your favorite cloud providers."
+            >
+              <img className={css(styles.featureImageRounded)} src={GatewayFeature} alt="Gateway" />
+            </Feature>
           </section>
 
           <section
@@ -310,7 +445,7 @@ const HomePage: React.FC = () => {
               className={css(styles.bodyText, isMobile && styles.bodyTextMobile)}
               style={{ textIndent: spacing.DEFAULT * 2 }}
             >
-              ~ Jeff & Bailey
+              ~ Jeff &amp; Bailey
             </p>
           </section>
         </div>
