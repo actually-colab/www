@@ -163,11 +163,6 @@ const Footer: React.FC = () => {
             },
             {
               title: "Bailey Tincher",
-              icon: "linkedin-square",
-              url: "https://www.linkedin.com/in/baileytincher/",
-            },
-            {
-              title: "Bailey Tincher",
               icon: "external-link",
               url: "https://btin.io/",
             },
