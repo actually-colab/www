@@ -12,15 +12,15 @@ import ScreenshotChat from "../assets/screenshot-chat.png";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFF",
+    backgroundColor: palette.BASE,
   },
   bodyContainer: {
     paddingTop: HEADER_HEIGHT,
   },
   titleContainer: {
     width: PAGE_WIDTH.DEFAULT,
-    paddingLeft: 32,
-    paddingRight: 32,
+    paddingLeft: spacing.DEFAULT * 2,
+    paddingRight: spacing.DEFAULT * 2,
     margin: "0 auto",
   },
   titleContainerMobile: {
