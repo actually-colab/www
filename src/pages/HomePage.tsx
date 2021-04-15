@@ -52,6 +52,15 @@ const styles = StyleSheet.create({
   subtitleTextMobile: {
     fontSize: 16,
   },
+  bodyText: {
+    fontSize: 20,
+    lineHeight: "140%",
+    textAlign: "left",
+    color: palette.GRAY,
+  },
+  bodyTextMobile: {
+    fontSize: 14,
+  },
   titleButtons: {
     marginTop: spacing.DEFAULT,
     textAlign: "center",
@@ -222,9 +231,9 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              The tools on the market are expensive, really really expensive. We asked ourselves why.
+              The tools on the market are all expensive, so we took a new angle.
               <br />
-              Then we asked how can we do better. Let's look at some examples.
+              Let's look at some examples.
             </p>
 
             <h6 className={css(styles.pricingLabel, isMobile && styles.pricingLabelMobile)}>
@@ -260,6 +269,42 @@ const HomePage: React.FC = () => {
                 highlight
               />
             </div>
+          </section>
+
+          <section
+            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
+            id="features"
+          ></section>
+
+          <section
+            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
+            id="mission"
+          >
+            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
+              Our mission is to expand opportunities for collaborative remote learning
+            </h1>
+
+            <p className={css(styles.bodyText, isMobile && styles.bodyTextMobile)}>
+              One of the biggest challenges, and one that we are acutely aware of now more than ever, is that it can be
+              really hard to deliver the same learning experience remotely. One way that a lot of students got exposure
+              to areas of CS is through workshops like the ones hundreds attended each year run by ADSA on campus. Those
+              workshops would offer an opportunity for younger students to interact and work with their peers, following
+              along with the presentation and seeing their code run before their own eyes. Unfortunately, the tools on
+              the market for collaborating on code and running workshops are either built only for a handful of users or
+              cost exorbitant amounts of money. Inspired by our experiences working directly with professors, hearing
+              their frustrations with what's available to them today, and our experiences running workshops through
+              ADSA, we aimed to build something better and to make it completely Open Source and free for all. We want
+              students anywhere around the world to be able to join workshops with hundreds or thousands of their peers
+              and learn in real-time. We want students to be able to follow along with the teacher during class and see
+              for themselves how the code works. So we set out to make that a reality.
+            </p>
+
+            <p
+              className={css(styles.bodyText, isMobile && styles.bodyTextMobile)}
+              style={{ textIndent: spacing.DEFAULT * 2 }}
+            >
+              ~ Jeff & Bailey
+            </p>
           </section>
         </div>
 

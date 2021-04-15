@@ -90,12 +90,12 @@ const links: {
   title: string;
   url: string;
 }[] = [
-  { title: "Features", url: "/features" },
-  { title: "Mission", url: "/mission" },
+  { title: "Features", url: "#features" },
+  { title: "Mission", url: "#mission" },
   { title: "Blog", url: BLOG_URI },
   { title: "Documentation", url: DOCS_URI },
   { title: "Open Source", url: GITHUB_URI },
-  { title: "Sponsor", url: PATREON_URI },
+  { title: "Sponsor Us", url: PATREON_URI },
 ];
 
 const Header: React.FC = () => {
