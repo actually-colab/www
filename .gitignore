@@ -26,5 +26,5 @@ yarn-error.log*
 .eslintcache
 
 # dist
-App.global.css
-App.global.css.map
+src/App.global.css
+src/App.global.css.map

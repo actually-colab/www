@@ -4,10 +4,10 @@ import { useMediaQuery } from "react-responsive";
 import { Button, Icon } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
-import { HEADER_HEIGHT } from "../constants/dimensions";
+import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
 import { openDevpost, openYoutube } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
-import { GradientText, Header } from "../components";
+import { Footer, GradientText, Header } from "../components";
 import ScreenshotChat from "../assets/screenshot-chat.png";
 
 const styles = StyleSheet.create({
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     paddingTop: HEADER_HEIGHT,
   },
   titleContainer: {
-    width: 880,
+    width: PAGE_WIDTH.DEFAULT,
     paddingLeft: 32,
     paddingRight: 32,
     margin: "0 auto",
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     paddingRight: 24,
   },
   titleContainerWide: {
-    width: 1200,
+    width: PAGE_WIDTH.WIDE,
   },
   titleText: {
     marginTop: 160,
@@ -68,7 +68,7 @@ const HomePage: React.FC = () => {
   const isWide = useMediaQuery({ query: "(min-width: 1600px)" });
 
   return (
-    <MediaQueryContext.Provider value={{ isMobile }}>
+    <MediaQueryContext.Provider value={{ isMobile, isWide }}>
       <div className={css(styles.container)}>
         <Header />
 
@@ -105,6 +105,8 @@ const HomePage: React.FC = () => {
             <img className={css(styles.screenshot)} src={ScreenshotChat} alt="Actually Colab" />
           </div>
         </div>
+
+        <Footer />
       </div>
     </MediaQueryContext.Provider>
   );
