@@ -24,3 +24,7 @@ yarn-error.log*
 
 .netlify
 .eslintcache
+
+# dist
+src/App.global.css
+src/App.global.css.map

@@ -6,17 +6,17 @@ import ScreenshotLong from "../assets/screenshot-long.png";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFF"
+    backgroundColor: "#FFF",
   },
   containerMobile: {},
   contentBackground: {
     margin: 80,
     display: "flex",
     background: "-webkit-linear-gradient(top left, #f55673, #E2CC52)",
-    borderRadius: 20
+    borderRadius: 20,
   },
   contentBackgroundMobile: {
-    margin: 20
+    margin: 20,
   },
   content: {
     display: "flex",
@@ -28,25 +28,25 @@ const styles = StyleSheet.create({
     margin: 4,
     padding: 40,
     borderRadius: 16,
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   contentMobile: {
-    padding: 20
+    padding: 20,
   },
   title: {
     fontSize: 64,
     fontWeight: "bold",
     background: "-webkit-linear-gradient(top left, #f55673, #E2CC52)",
     "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent"
+    "-webkit-text-fill-color": "transparent",
   },
   titleMobile: {
-    fontSize: 32
+    fontSize: 32,
   },
   screenshot: {
     maxWidth: "100%",
-    objectFit: "contain"
-  }
+    objectFit: "contain",
+  },
 });
 
 const LandingPage: React.FC = () => {
