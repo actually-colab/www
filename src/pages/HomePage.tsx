@@ -73,6 +73,15 @@ const styles = StyleSheet.create({
     marginTop: 40,
     fontSize: 24,
   },
+  pricingLabel: {
+    marginTop: 40,
+    textAlign: "center",
+    fontSize: 24,
+    color: "black",
+  },
+  pricingLabelMobile: {
+    fontSize: 20,
+  },
   pricingSection: {
     display: "flex",
     flexDirection: "row",
@@ -84,11 +93,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   pricingContainer: {
-    marginTop: spacing.DEFAULT * 4,
+    marginTop: spacing.DEFAULT * 2,
+    marginLeft: spacing.DEFAULT,
+    marginRight: spacing.DEFAULT,
     width: 360,
   },
   pricingContainerMobile: {
+    width: "100%",
     marginTop: spacing.DEFAULT * 2,
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   pricingContent: {
     padding: 20,
@@ -129,10 +143,11 @@ const styles = StyleSheet.create({
 const PricingContainer: React.FC<{
   title: string;
   cost: string;
+  per: string;
   description: string;
   features: string[];
   highlight?: boolean;
-}> = ({ title, cost, description, features, highlight = false }) => {
+}> = ({ title, cost, per, description, features, highlight = false }) => {
   const { isMobile } = React.useContext(MediaQueryContext);
 
   return (
@@ -143,7 +158,7 @@ const PricingContainer: React.FC<{
             <p className={css(styles.pricingTitle, isMobile && styles.pricingTitleMobile)}>{title}</p>
             <p className={css(styles.pricingCost)}>
               <span className={css(styles.pricingCostValue, isMobile && styles.pricingCostValueMobile)}>{cost}</span>
-              <span className={css(styles.pricingCostDuration)}>/ year</span>
+              <span className={css(styles.pricingCostDuration)}>/ {per}</span>
             </p>
 
             <p className={css(styles.pricingDescription)}>{description}</p>
@@ -207,20 +222,25 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              The tools on the market are expensive, really really expensive. We asked ourselves why?
+              The tools on the market are expensive, really really expensive. We asked ourselves why.
               <br />
-              Then we asked how can we do better?
+              Then we asked how can we do better. Let's look at some examples.
             </p>
+
+            <h6 className={css(styles.pricingLabel, isMobile && styles.pricingLabelMobile)}>
+              Let's say you're&nbsp;
+              <span style={{ textDecoration: "underline" }}>hosting a 5 day professional training seminar</span>
+            </h6>
 
             <div className={css(styles.pricingSection, isMobile && styles.pricingSectionMobile)}>
               <PricingContainer
                 title="The Other Guys"
-                cost="$3,690"
-                description="Good for a small class or team with a big budget and a fixed number of known users."
+                cost="$34"
+                per="seminar"
+                description="They'll host everything for you, but it comes at a cost to both your wallet and flexibility due to a centralized VM."
                 features={[
-                  "Supports ~25 distinct users at a time",
-                  "Set durations like 1 month, 4 months, etc",
-                  "Requires purchasing a license before use",
+                  "5 fixed students + 1 instructor",
+                  "Each user has their own notebook",
                   "Server side code execution, users share a single server",
                   "Pre-configured VMs, pay more to upgrade the disk space, RAM, and CPUs",
                 ]}
@@ -228,13 +248,13 @@ const HomePage: React.FC = () => {
 
               <PricingContainer
                 title="Us"
-                cost="$1,732"
-                description="Great for small or large classes and teams with completely flexible durations and requirements."
+                cost="$13"
+                per="seminar"
+                description="Requires more setup for first time users, but lets you use as little or as much compute as you need straight from your favorite provider."
                 features={[
-                  "No hard limits on number of users",
-                  "Completely flexible durations",
-                  "Available on demand",
-                  "Client side code execution, every user gets their own environment",
+                  "5 students at a time + 1 instructor",
+                  "Each user has their own notebook",
+                  "Client side code execution, every user has their own environment",
                   "Supports remote VMs, bring the hardware you have, or pay for the hardware you need",
                 ]}
                 highlight
