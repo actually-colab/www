@@ -70,8 +70,8 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              We make it free and easy for anyone to work together anytime, anywhere. We built a custom cloud notebook
-              editor to deliver better collaboration without the cost. We're excited to see what you build with it.
+              We make it free and easy for anyone to work together anytime, anywhere. We developed a custom cloud
+              notebook editor to deliver better collaboration without the cost. What will you build next?
             </p>
           </div>
         </div>
