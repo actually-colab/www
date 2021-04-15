@@ -5,6 +5,7 @@ import { palette, spacing } from "../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
 import { MediaQueryContext } from "../contexts";
 import { GradientText } from ".";
+import { BLOG_URI, DOCS_URI, GITHUB_URI, PATREON_URI } from "../utils/redirect";
 
 const styles = StyleSheet.create({
   container: {
@@ -41,7 +42,34 @@ const styles = StyleSheet.create({
   logoMobile: {
     fontSize: 20,
   },
+  headerLinks: {
+    flex: 1,
+    paddingLeft: spacing.DEFAULT * 2,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  headerLink: {
+    fontSize: 16,
+    color: palette.CHARCOAL,
+    ":hover": {
+      color: "black",
+    },
+  },
 });
+
+const links: {
+  title: string;
+  url: string;
+}[] = [
+  { title: "Features", url: "/features" },
+  { title: "Mission", url: "/mission" },
+  { title: "Blog", url: BLOG_URI },
+  { title: "Documentation", url: DOCS_URI },
+  { title: "Open Source", url: GITHUB_URI },
+  { title: "Sponsor", url: PATREON_URI },
+];
 
 const Header: React.FC = () => {
   const { isMobile, isWide } = React.useContext(MediaQueryContext);
@@ -52,6 +80,16 @@ const Header: React.FC = () => {
         <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>
           <GradientText>actually colab</GradientText>
         </h4>
+
+        {!isMobile && (
+          <div className={css(styles.headerLinks)}>
+            {links.map((link) => (
+              <a className={css(styles.headerLink)} href={link.url}>
+                {link.title}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { StyleSheet, css } from "aphrodite";
 import { Icon, IconProps } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
-import { DEVPOST_URI, GITHUB_URI, YOUTUBE_URI } from "../utils/redirect";
+import { BLOG_URI, DEVPOST_URI, DOCS_URI, GITHUB_URI, PATREON_URI, YOUTUBE_URI } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { PAGE_WIDTH } from "../constants/dimensions";
 import { GradientText } from ".";
@@ -68,7 +68,11 @@ const styles = StyleSheet.create({
 
 const FooterSection: React.FC<{
   title: React.ReactNode;
-  links?: { title: string; icon?: IconProps["icon"]; url: string }[];
+  links?: {
+    title: string;
+    icon?: IconProps["icon"];
+    url: string;
+  }[];
 }> = ({ title, links = [] }) => {
   const { isMobile } = React.useContext(MediaQueryContext);
 
@@ -119,14 +123,16 @@ const Footer: React.FC = () => {
                 title: "Built at the University of Illinois at Urbana-Champaign",
                 url: "https://illinois.edu/",
               },
+              { title: "Terms and Conditions", url: "/terms" },
+              { title: "Privacy Policy", url: "/privacy" },
             ]}
           />
         </div>
         <FooterSection
           title="Community"
           links={[
-            { title: "Developer Blog", url: "https://docs.actuallycolab.org/blog" },
-            { title: "Developer Docs", url: "https://docs.actuallycolab.org/docs/" },
+            { title: "Developer Blog", url: BLOG_URI },
+            { title: "Developer Docs", url: DOCS_URI },
             { title: isMobile ? "GitHub Org" : "GitHub Organization", icon: "github", url: GITHUB_URI },
             { title: isMobile ? "HackIL Devpost" : "HackIllinois Devpost", icon: "trophy", url: DEVPOST_URI },
             { title: "YouTube", icon: "youtube-play", url: YOUTUBE_URI },
@@ -144,7 +150,7 @@ const Footer: React.FC = () => {
         <FooterSection
           title="Follow"
           links={[
-            { title: "Patreon", icon: "heart", url: "https://www.patreon.com/actuallycolab" },
+            { title: "Patreon", icon: "heart", url: PATREON_URI },
             {
               title: "Jeff Taylor-Chang",
               icon: "linkedin-square",

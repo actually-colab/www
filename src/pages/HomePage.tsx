@@ -70,15 +70,14 @@ const HomePage: React.FC = () => {
   return (
     <MediaQueryContext.Provider value={{ isMobile, isWide }}>
       <div className={css(styles.container)}>
-        <Header />
-
         <div className={css(styles.bodyContainer)}>
-          <div
+          <section
             className={css(
               styles.titleContainer,
               isMobile && styles.titleContainerMobile,
               isWide && styles.titleContainerWide
             )}
+            id="title"
           >
             <h1 className={css(styles.titleText, isMobile && styles.titleTextMobile)}>
               Collaboration <GradientText>actually</GradientText> done right
@@ -103,9 +102,10 @@ const HomePage: React.FC = () => {
             </div>
 
             <img className={css(styles.screenshot)} src={ScreenshotChat} alt="Actually Colab" />
-          </div>
+          </section>
         </div>
 
+        <Header />
         <Footer />
       </div>
     </MediaQueryContext.Provider>
