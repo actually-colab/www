@@ -10,7 +10,7 @@ import { GradientText } from ".";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: spacing.DEFAULT * 2,
+    marginTop: spacing.DEFAULT * 4,
     width: "100%",
     borderTopStyle: "solid",
     borderTopWidth: 1,
