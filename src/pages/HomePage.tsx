@@ -1,11 +1,14 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite";
 import { useMediaQuery } from "react-responsive";
+import { Button, Icon } from "rsuite";
 
-import { palette } from "../constants/theme";
+import { palette, spacing } from "../constants/theme";
+import { HEADER_HEIGHT } from "../constants/dimensions";
+import { openDevpost, openYoutube } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { GradientText, Header } from "../components";
-import { HEADER_HEIGHT } from "../constants/dimensions";
+import ScreenshotChat from "../assets/screenshot-chat.png";
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +18,7 @@ const styles = StyleSheet.create({
     paddingTop: HEADER_HEIGHT,
   },
   titleContainer: {
-    width: 780,
+    width: 880,
     paddingLeft: 32,
     paddingRight: 32,
     margin: "0 auto",
@@ -30,8 +33,10 @@ const styles = StyleSheet.create({
   },
   titleText: {
     marginTop: 160,
-    marginBottom: 0,
+    marginBottom: 32,
     fontSize: 72,
+    lineHeight: "100%",
+    color: "black",
     textAlign: "center",
   },
   titleTextMobile: {
@@ -39,12 +44,22 @@ const styles = StyleSheet.create({
     fontSize: 40,
   },
   subtitleText: {
-    fontSize: 24,
+    fontSize: 20,
+    lineHeight: "140%",
     textAlign: "center",
     color: palette.GRAY,
   },
   subtitleTextMobile: {
     fontSize: 16,
+  },
+  titleButtons: {
+    marginTop: spacing.DEFAULT,
+    textAlign: "center",
+  },
+  screenshot: {
+    marginTop: 80,
+    maxWidth: "100%",
+    objectFit: "contain",
   },
 });
 
@@ -71,8 +86,23 @@ const HomePage: React.FC = () => {
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
               We make it free and easy for anyone to work together anytime, anywhere. We developed a custom cloud
-              notebook editor to deliver better collaboration without the cost. What will you build next?
+              notebook editor to deliver better collaboration without the cost.
+              {isWide ? " " : <br />}
+              What will you build with it?
             </p>
+
+            <div className={css(styles.titleButtons)}>
+              <Button onClick={openYoutube}>
+                <Icon icon="logo-video" />
+                &nbsp;&nbsp;Watch the demo
+              </Button>{" "}
+              <Button onClick={openDevpost}>
+                <Icon icon="file-text-o" />
+                &nbsp;&nbsp;Read our Devpost
+              </Button>
+            </div>
+
+            <img className={css(styles.screenshot)} src={ScreenshotChat} alt="Actually Colab" />
           </div>
         </div>
       </div>

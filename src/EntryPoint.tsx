@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, withRouter } from "react-router";
 
+import "./App.global.css";
 import HomePage from "./pages/HomePage";
 import LandingPage from "./pages/LandingPage";
 import PrivacyPage from "./pages/PrivacyPage";
