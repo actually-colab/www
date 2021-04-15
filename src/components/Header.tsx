@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite";
+import { Drawer, Icon, IconButton } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
+import { BLOG_URI, DOCS_URI, GITHUB_URI, PATREON_URI } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { GradientText } from ".";
-import { BLOG_URI, DOCS_URI, GITHUB_URI, PATREON_URI } from "../utils/redirect";
 
 const styles = StyleSheet.create({
   container: {
@@ -42,6 +43,29 @@ const styles = StyleSheet.create({
   logoMobile: {
     fontSize: 20,
   },
+  headerMobile: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  drawerContent: {
+    width: "100%",
+    height: "100%",
+    paddingLeft: 24,
+    paddingRight: 24,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  drawerTitleContainer: {
+    height: HEADER_HEIGHT,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   headerLinks: {
     flex: 1,
     paddingLeft: spacing.DEFAULT * 2,
@@ -56,6 +80,9 @@ const styles = StyleSheet.create({
     ":hover": {
       color: "black",
     },
+  },
+  headerLinkMobile: {
+    marginBottom: spacing.DEFAULT,
   },
 });
 
@@ -74,6 +101,8 @@ const links: {
 const Header: React.FC = () => {
   const { isMobile, isWide } = React.useContext(MediaQueryContext);
 
+  const [isDrawerVisible, setIsDrawerVisible] = React.useState<boolean>(false);
+
   return (
     <div className={css(styles.container)}>
       <div className={css(styles.content, isMobile && styles.contentMobile, isWide && styles.contentWide)}>
@@ -81,10 +110,32 @@ const Header: React.FC = () => {
           <GradientText>actually colab</GradientText>
         </h4>
 
-        {!isMobile && (
+        {isMobile ? (
+          <div className={css(styles.headerMobile)}>
+            <IconButton size="lg" icon={<Icon icon="bars" />} onClick={() => setIsDrawerVisible(true)} />
+
+            <Drawer show={isDrawerVisible} placement="top" size="xs" onHide={() => setIsDrawerVisible(false)}>
+              <div className={css(styles.drawerContent)}>
+                <div className={css(styles.drawerTitleContainer)}>
+                  <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>
+                    <GradientText>actually colab</GradientText>
+                  </h4>
+
+                  <IconButton size="lg" icon={<Icon icon="close" />} onClick={() => setIsDrawerVisible(false)} />
+                </div>
+
+                {links.map((link) => (
+                  <a key={link.url} className={css(styles.headerLink, styles.headerLinkMobile)} href={link.url}>
+                    {link.title}
+                  </a>
+                ))}
+              </div>
+            </Drawer>
+          </div>
+        ) : (
           <div className={css(styles.headerLinks)}>
             {links.map((link) => (
-              <a className={css(styles.headerLink)} href={link.url}>
+              <a key={link.url} className={css(styles.headerLink)} href={link.url}>
                 {link.title}
               </a>
             ))}
