@@ -19,12 +19,14 @@ const styles = StyleSheet.create({
   },
   section: {
     width: PAGE_WIDTH.DEFAULT,
+    paddingTop: 160,
     paddingLeft: spacing.DEFAULT * 2,
     paddingRight: spacing.DEFAULT * 2,
     margin: "0 auto",
   },
   sectionMobile: {
     width: "auto",
+    paddingTop: 80,
     paddingLeft: 24,
     paddingRight: 24,
   },
@@ -32,7 +34,6 @@ const styles = StyleSheet.create({
     width: PAGE_WIDTH.WIDE,
   },
   titleText: {
-    marginTop: 160,
     marginBottom: 32,
     fontSize: 72,
     lineHeight: "100%",
@@ -40,7 +41,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   titleTextMobile: {
-    marginTop: 40,
     fontSize: 40,
   },
   subtitleText: {
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     objectFit: "contain",
   },
   secondaryTitleText: {
-    marginTop: 160,
     marginBottom: 32,
     fontSize: 48,
     lineHeight: "100%",
@@ -79,7 +78,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   secondaryTitleTextMobile: {
-    marginTop: 40,
     fontSize: 24,
   },
   pricingLabel: {
@@ -224,6 +222,21 @@ const HomePage: React.FC = () => {
 
           <section
             className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
+            id="features"
+          >
+            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
+              A cloud based Jupyter editor unlike any of its kind
+            </h1>
+
+            <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
+              We took a new approach to an old problem. We built the editor from the ground up to integrate tightly with
+              our collaboration features but paid our respects to what came before. If you're a Jupyter user, you should
+              still feel right at home.
+            </p>
+          </section>
+
+          <section
+            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
             id="pricing"
           >
             <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
@@ -231,9 +244,8 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              The tools on the market are all expensive, so we took a new angle.
-              <br />
-              Let's look at some examples.
+              The tools on the market are all expensive, so we took a new angle. Let's look at some examples of how we
+              stack up against what's available now.
             </p>
 
             <h6 className={css(styles.pricingLabel, isMobile && styles.pricingLabelMobile)}>
@@ -270,11 +282,6 @@ const HomePage: React.FC = () => {
               />
             </div>
           </section>
-
-          <section
-            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
-            id="features"
-          ></section>
 
           <section
             className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
