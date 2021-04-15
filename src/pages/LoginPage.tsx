@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   signInContainerBackground: {
     width: 512,
     background: "-webkit-linear-gradient(top left, #f55673, #E2CC52)",
-    borderRadius: 20
+    borderRadius: 20,
   },
   signInContainer: {
     display: "flex",
@@ -26,23 +26,23 @@ const styles = StyleSheet.create({
     margin: 4,
     padding: 40,
     borderRadius: 16,
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   title: {
     fontSize: 64,
     fontWeight: "bold",
     background: "-webkit-linear-gradient(top left, #f55673, #E2CC52)",
     "-webkit-background-clip": "text",
-    "-webkit-text-fill-color": "transparent"
+    "-webkit-text-fill-color": "transparent",
   },
   redirectText: {
     textAlign: "center",
     color: "#8C8A93",
-    cursor: "pointer"
+    cursor: "pointer",
   },
   hereText: {
-    color: "#f55673"
-  }
+    color: "#f55673",
+  },
 });
 
 const LoginPage: React.FC = () => {
@@ -50,7 +50,7 @@ const LoginPage: React.FC = () => {
 
   const onGoogleSignInSuccess = React.useCallback((payload: GoogleLoginResponse) => {
     const minimalPayload: DesktopRedirectPayload = {
-      token: payload.tokenId
+      token: payload.tokenId,
     };
 
     setRedirectPayload(minimalPayload);
@@ -83,7 +83,7 @@ const LoginPage: React.FC = () => {
               className={css(styles.redirectText)}
               onClick={() =>
                 openDesktop({
-                  token: process.env.REACT_APP_DEV_TOKEN ?? ""
+                  token: process.env.REACT_APP_DEV_TOKEN ?? "",
                 })
               }
             >

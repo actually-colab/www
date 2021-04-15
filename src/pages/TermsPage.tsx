@@ -3,8 +3,8 @@ import { StyleSheet, css } from "aphrodite";
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20
-  }
+    padding: 20,
+  },
 });
 
 const TermsPage: React.FC = () => {

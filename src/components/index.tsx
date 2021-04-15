@@ -1,3 +1,5 @@
 import GoogleSignInButton from "./GoogleSignInButton";
+import GradientText from "./GradientText";
+import Header from "./Header";
 
-export { GoogleSignInButton };
+export { GoogleSignInButton, GradientText, Header };

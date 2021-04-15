@@ -1,9 +1,9 @@
-{
-  "parserOptions": {
-    "ecmaVersion": 6
+module.exports = {
+  parserOptions: {
+    ecmaVersion: 6,
   },
-  "plugins": ["react-hooks"],
-  "rules": {
+  plugins: ["react-hooks"],
+  rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "import/order": "off",
@@ -14,7 +14,7 @@
     "handle-callback-err": "off",
     "prefer-promise-reject-errors": "off",
     "prefer-const": "error",
-    "no-var": "error"
+    "no-var": "error",
   },
-  "extends": ["react-app", "plugin:prettier/recommended"]
-}
+  extends: ["react-app", "plugin:prettier/recommended"],
+};
