@@ -67,8 +67,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   titleButtons: {
-    marginTop: spacing.DEFAULT,
     textAlign: "center",
+  },
+  titleButton: {
+    marginTop: spacing.DEFAULT,
   },
   screenshot: {
     marginTop: 80,
@@ -303,12 +305,12 @@ const HomePage: React.FC = () => {
             </p>
 
             <div className={css(styles.titleButtons)}>
-              <Button onClick={openYoutube}>
+              <Button className={css(styles.titleButton)} onClick={openYoutube}>
                 <Icon icon="logo-video" />
                 &nbsp;&nbsp;Watch the demo
               </Button>
               &nbsp;&nbsp;
-              <Button onClick={openDevpost}>
+              <Button className={css(styles.titleButton)} onClick={openDevpost}>
                 <Icon icon="file-text-o" />
                 &nbsp;&nbsp;Read our Devpost
               </Button>
@@ -425,12 +427,12 @@ const HomePage: React.FC = () => {
             </p>
 
             <div className={css(styles.titleButtons)}>
-              <Button onClick={openGithubDesktop}>
+              <Button className={css(styles.titleButton)} onClick={openGithubDesktop}>
                 <Icon icon="star" />
                 &nbsp;&nbsp;Star us on GitHub
               </Button>
               &nbsp;&nbsp;
-              <Button appearance="primary" onClick={openPatreon}>
+              <Button className={css(styles.titleButton)} appearance="primary" onClick={openPatreon}>
                 <Icon icon="heart" />
                 &nbsp;&nbsp;Sponsor us on Patreon
               </Button>
