@@ -4,6 +4,11 @@
 export const GITHUB_URI = "https://github.com/actually-colab";
 
 /**
+ * The link to the desktop github page
+ */
+export const GITHUB_DESKTOP_URI = `${GITHUB_URI}/desktop`;
+
+/**
  * The link to the youtube demo video
  */
 export const YOUTUBE_URI = "https://www.youtube.com/watch?v=ParNlHsbSrY";
@@ -37,6 +42,10 @@ export const openLink = (link: string): void => {
 
 export const openGithub = (): void => openLink(GITHUB_URI);
 
+export const openGithubDesktop = (): void => openLink(GITHUB_DESKTOP_URI);
+
 export const openYoutube = (): void => openLink(YOUTUBE_URI);
 
 export const openDevpost = (): void => openLink(DEVPOST_URI);
+
+export const openPatreon = (): void => openLink(PATREON_URI);

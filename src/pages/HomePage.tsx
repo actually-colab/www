@@ -5,7 +5,7 @@ import { Button, Icon } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
-import { openDevpost, openYoutube } from "../utils/redirect";
+import { openDevpost, openGithubDesktop, openPatreon, openYoutube } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { Footer, GradientBorderContainer, GradientText, Header } from "../components";
 import Screenshot from "../assets/screenshot.png";
@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   pricingSection: {
+    marginBottom: spacing.DEFAULT * 2,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -305,7 +306,8 @@ const HomePage: React.FC = () => {
               <Button onClick={openYoutube}>
                 <Icon icon="logo-video" />
                 &nbsp;&nbsp;Watch the demo
-              </Button>{" "}
+              </Button>
+              &nbsp;&nbsp;
               <Button onClick={openDevpost}>
                 <Icon icon="file-text-o" />
                 &nbsp;&nbsp;Read our Devpost
@@ -415,6 +417,23 @@ const HomePage: React.FC = () => {
                 ]}
                 highlight
               />
+            </div>
+
+            <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
+              Through the help of grants and donations, we aim to deliver the service at no cost to our users. If you
+              believe in our work and our mission, please consider donating to help keep it free for all.
+            </p>
+
+            <div className={css(styles.titleButtons)}>
+              <Button onClick={openGithubDesktop}>
+                <Icon icon="star" />
+                &nbsp;&nbsp;Star us on GitHub
+              </Button>
+              &nbsp;&nbsp;
+              <Button appearance="primary" onClick={openPatreon}>
+                <Icon icon="heart" />
+                &nbsp;&nbsp;Sponsor us on Patreon
+              </Button>
             </div>
           </section>
 
