@@ -3,7 +3,7 @@ import { StyleSheet, css } from "aphrodite";
 import { Icon, IconProps } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
-import { BLOG_URI, DEVPOST_URI, DOCS_URI, GITHUB_URI, PATREON_URI, YOUTUBE_URI } from "../utils/redirect";
+import { BLOG_URI, DEVPOST_URI, DOCS_URI, GITHUB_URI, YOUTUBE_URI } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { PAGE_WIDTH } from "../constants/dimensions";
 import { GradientText } from ".";
@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
         <FooterSection
           title="Follow"
           links={[
-            { title: "Patreon", icon: "heart", url: PATREON_URI },
+            // { title: "Patreon", icon: "heart", url: PATREON_URI },
             {
               title: "Jeff Taylor-Chang",
               icon: "linkedin-square",

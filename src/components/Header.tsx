@@ -4,7 +4,7 @@ import { Drawer, Icon, IconButton } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
-import { BLOG_URI, DOCS_URI, GITHUB_URI, PATREON_URI } from "../utils/redirect";
+import { BLOG_URI, DOCS_URI, GITHUB_URI } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { GradientText } from ".";
 
@@ -95,7 +95,7 @@ const links: {
   { title: "Blog", url: BLOG_URI },
   { title: "Documentation", url: DOCS_URI },
   { title: "Open Source", url: GITHUB_URI },
-  { title: "Sponsor Us", url: PATREON_URI },
+  // { title: "Sponsor Us", url: PATREON_URI },
 ];
 
 const Header: React.FC = () => {

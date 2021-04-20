@@ -5,7 +5,7 @@ import { Button, Icon } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
-import { openDevpost, openGithubDesktop, openPatreon, openYoutube } from "../utils/redirect";
+import { openDevpost, openGithubDesktop, openYoutube } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { Footer, GradientBorderContainer, GradientText, Header } from "../components";
 import Screenshot from "../assets/screenshot.png";
@@ -432,11 +432,11 @@ const HomePage: React.FC = () => {
                 <Icon icon="star" />
                 &nbsp;&nbsp;Star us on GitHub
               </Button>
-              &nbsp;&nbsp;
+              {/* &nbsp;&nbsp;
               <Button className={css(styles.titleButton)} appearance="primary" onClick={openPatreon}>
                 <Icon icon="heart" />
                 &nbsp;&nbsp;Sponsor us on Patreon
-              </Button>
+              </Button> */}
             </div>
           </section>
 
