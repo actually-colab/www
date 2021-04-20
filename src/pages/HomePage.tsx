@@ -383,8 +383,9 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              The tools on the market are all expensive, so we took a new angle. Let's look at some examples of how we
-              stack up against what's available now.
+              The tools on the market are all expensive, so we took a new angle. Institutions and organizations pay to
+              run workshops and classes, but individuals can use the regular platform with small teams for free. Let's
+              look at some examples of how we stack up against what's available now.
             </p>
 
             <h6 className={css(styles.pricingLabel, isMobile && styles.pricingLabelMobile)}>
@@ -423,7 +424,7 @@ const HomePage: React.FC = () => {
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
               Through the help of grants and donations, we aim to deliver the service at no cost to our users. If you
-              believe in our work and our mission, please consider donating to help keep it free for all.
+              believe in our work and our mission, please consider donating to help keep it free for individuals.
             </p>
 
             <div className={css(styles.titleButtons)}>
@@ -456,10 +457,10 @@ const HomePage: React.FC = () => {
               the market for collaborating on code and running workshops are either built only for a handful of users or
               cost exorbitant amounts of money. Inspired by our experiences working directly with professors, hearing
               their frustrations with what's available to them today, and our experiences running workshops through
-              ADSA, we aimed to build something better and to make it completely Open Source and free for all. We want
-              students anywhere around the world to be able to join workshops with hundreds or thousands of their peers
-              and learn in real-time. We want students to be able to follow along with the teacher during class and see
-              for themselves how the code works. So we set out to make that a reality.
+              ADSA, we aimed to build something better and to make it completely Open Source and free for individuals.
+              We want students anywhere around the world to be able to join workshops with hundreds or thousands of
+              their peers and learn in real-time. We want students to be able to follow along with the teacher during
+              class and see for themselves how the code works. So we set out to make that a reality.
             </p>
 
             <p
