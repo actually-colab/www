@@ -106,8 +106,7 @@ const Header: React.FC = () => {
   return (
     <div className={css(styles.container)}>
       <div className={css(styles.content, isMobile && styles.contentMobile, isWide && styles.contentWide)}>
-        {/* prettier-ignore */}
-        <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>{/* lgtm [js/trivial-conditional] */}
+        <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>
           <GradientText>actually colab</GradientText>
         </h4>
 
@@ -118,7 +117,7 @@ const Header: React.FC = () => {
             <Drawer show={isDrawerVisible} placement="top" size="xs" onHide={() => setIsDrawerVisible(false)}>
               <div className={css(styles.drawerContent)}>
                 <div className={css(styles.drawerTitleContainer)}>
-                  <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>
+                  <h4 className={css(styles.logo, styles.logoMobile)}>
                     <GradientText>actually colab</GradientText>
                   </h4>
 
