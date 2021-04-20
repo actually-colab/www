@@ -106,7 +106,8 @@ const Header: React.FC = () => {
   return (
     <div className={css(styles.container)}>
       <div className={css(styles.content, isMobile && styles.contentMobile, isWide && styles.contentWide)}>
-        <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>
+        {/* prettier-ignore */}
+        <h4 className={css(styles.logo, isMobile && styles.logoMobile)}>{/* lgtm [js/trivial-conditional] */}
           <GradientText>actually colab</GradientText>
         </h4>
 
