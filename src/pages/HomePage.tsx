@@ -442,6 +442,17 @@ const HomePage: React.FC = () => {
 
           <section
             className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
+            id="sponsors"
+          >
+            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
+              Made possible by our sponsors, grants, and support
+            </h1>
+
+            <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>Coming soon</p>
+          </section>
+
+          <section
+            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
             id="mission"
           >
             <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
@@ -469,6 +480,17 @@ const HomePage: React.FC = () => {
             >
               ~ Jeff &amp; Bailey
             </p>
+          </section>
+
+          <section
+            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
+            id="founders"
+          >
+            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
+              Meet our founders
+            </h1>
+
+            <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>Coming soon</p>
           </section>
         </div>
 
