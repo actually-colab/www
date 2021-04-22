@@ -5,7 +5,7 @@ import { Button, Icon } from "rsuite";
 
 import { palette, spacing } from "../../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../../constants/dimensions";
-import { BTINCHER_URI, JTAYLORCHANG_URI, openDevpost, openGithubDesktop, openYoutube } from "../../utils/redirect";
+import { openDevpost, openGithubDesktop, openYoutube } from "../../utils/redirect";
 import { MediaQueryContext } from "../../contexts";
 import { Footer, GradientText, Header } from "../../components";
 import Screenshot from "../../assets/screenshot.png";
@@ -14,10 +14,7 @@ import OutputsFeature from "../../assets/outputs.png";
 import GatewayFeature from "../../assets/gateway.png";
 import ImportFeature from "../../assets/import.png";
 import ShareFeature from "../../assets/share.png";
-import jtaylorchang from "../../assets/jtaylorchang.jpg";
-import btincher from "../../assets/btincher.jpg";
 import Feature from "./Feature";
-import Member from "./Member";
 import PricingContainer from "./PricingContainer";
 
 const styles = StyleSheet.create({
@@ -114,17 +111,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   pricingSectionMobile: {
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  memberSection: {
-    marginBottom: spacing.DEFAULT * 2,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "flex-start",
-  },
-  memberSectionMobile: {
     flexDirection: "column",
     alignItems: "center",
   },
@@ -329,25 +315,6 @@ const HomePage: React.FC = () => {
             >
               ~ Jeff &amp; Bailey
             </p>
-          </section>
-
-          <section
-            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
-            id="founders"
-          >
-            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
-              Meet our founders
-            </h1>
-
-            <div className={css(styles.memberSection, isMobile && styles.memberSectionMobile)}>
-              <Member
-                name="Jeff Taylor-Chang"
-                description="Lead frontend developer"
-                link={JTAYLORCHANG_URI}
-                image={jtaylorchang}
-              />
-              <Member name="Bailey Tincher" description="Lead backend developer" link={BTINCHER_URI} image={btincher} />
-            </div>
           </section>
         </div>
 
