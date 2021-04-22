@@ -5,15 +5,10 @@ import { Button, Icon } from "rsuite";
 
 import { palette, spacing } from "../../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../../constants/dimensions";
+import { FEATURES, SCREENSHOTS } from "../../constants/images";
 import { openDevpost, openGithubDesktop, openYoutube } from "../../utils/redirect";
 import { MediaQueryContext } from "../../contexts";
 import { Footer, GradientText, Header } from "../../components";
-import Screenshot from "../../assets/screenshot.png";
-import ChatFeature from "../../assets/chat.png";
-import OutputsFeature from "../../assets/outputs.png";
-import GatewayFeature from "../../assets/gateway.png";
-import ImportFeature from "../../assets/import.png";
-import ShareFeature from "../../assets/share.png";
 import Feature from "./Feature";
 import PricingContainer from "./PricingContainer";
 
@@ -151,7 +146,7 @@ const HomePage: React.FC = () => {
               </Button>
             </div>
 
-            <img className={css(styles.screenshot)} src={Screenshot} alt="Actually Colab" />
+            <img className={css(styles.screenshot)} src={SCREENSHOTS.main} alt="Actually Colab" />
           </section>
 
           <section
@@ -173,7 +168,7 @@ const HomePage: React.FC = () => {
               title="Share with just the right amount of access"
               description="You alone are in control of your notebooks, unless you want to share. We let you choose who can view and edit your notebooks and you can revoke permission at any time."
             >
-              <img className={css(styles.featureImageRounded)} src={ShareFeature} alt="Sharing" />
+              <img className={css(styles.featureImageRounded)} src={FEATURES.share} alt="Sharing" />
             </Feature>
 
             <Feature
@@ -181,7 +176,7 @@ const HomePage: React.FC = () => {
               title="Chat with your team, fellow students, and instructors"
               description="Have a question for the instructor? No problem, you can message them via the built-in chat. We have a built-in chat feature because coding together is better than coding alone."
             >
-              <img className={css(styles.featureImageRounded)} src={ChatFeature} alt="Chat" />
+              <img className={css(styles.featureImageRounded)} src={FEATURES.chat} alt="Chat" />
             </Feature>
 
             <Feature
@@ -189,7 +184,7 @@ const HomePage: React.FC = () => {
               title="View everyone's outputs"
               description="Sometimes you want to run code yourself, other times you want to see what your instructor or teammate has instead. We let you choose whose outputs you are viewing with the click of a button."
             >
-              <img className={css(styles.featureImageRounded)} src={OutputsFeature} alt="Outputs" />
+              <img className={css(styles.featureImageRounded)} src={FEATURES.outputs} alt="Outputs" />
             </Feature>
 
             <Feature
@@ -197,7 +192,7 @@ const HomePage: React.FC = () => {
               title="Import the notebooks you already have"
               description="Hey we get it, we're not your first Jupyter editor and that's okay. You can import the notebooks, and if you ever need your notebook back you can export them too."
             >
-              <img className={css(styles.featureImageRounded)} src={ImportFeature} alt="Import" />
+              <img className={css(styles.featureImageRounded)} src={FEATURES.importNotebook} alt="Import" />
             </Feature>
 
             <Feature
@@ -205,7 +200,7 @@ const HomePage: React.FC = () => {
               title="Use a remote machine when you need raw power your computer can't provide"
               description="By default we let you run your notebooks on your own computer but sometimes that doesn't cut it. Need a Tesla A100 for Deep Learning? Connect directly to a VM from your favorite cloud providers."
             >
-              <img className={css(styles.featureImageRounded)} src={GatewayFeature} alt="Gateway" />
+              <img className={css(styles.featureImageRounded)} src={FEATURES.kernelGateway} alt="Gateway" />
             </Feature>
           </section>
 
