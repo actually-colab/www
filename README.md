@@ -20,3 +20,7 @@ Website landing page and authentication redirect for [@actually-colab](https://g
 - `yarn format` to format the code with Prettier
 - `yarn eslint` to lint with eslint
 - `yarn validate` to verify TypeScript with TSC
+
+## License
+
+`@actually-colab/www` is [GPLv2 licensed](./LICENSE)
