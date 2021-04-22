@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   pricingSection: {
-    marginBottom: spacing.DEFAULT * 2,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -213,9 +212,10 @@ const HomePage: React.FC = () => {
             </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              The tools on the market are all expensive, so we took a new angle. Institutions and organizations pay to
-              run workshops and classes, but individuals can use the regular platform with small teams for free. Let's
-              look at some examples of how we stack up against what's available now.
+              The tools on the market are all expensive and lack the flexibility required by small teams and ad-hoc
+              workshops, so we took a new angle. Institutions and organizations cover their costs of running workshops
+              and classes, and individuals can use the regular platform with small teams for free. Let's look at some
+              examples of how much it costs us to operate versus the commercially available alternatives.
             </p>
 
             <h6 className={css(styles.pricingLabel, isMobile && styles.pricingLabelMobile)}>
@@ -251,10 +251,24 @@ const HomePage: React.FC = () => {
                 highlight
               />
             </div>
+          </section>
+
+          <section
+            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
+            id="sponsors"
+          >
+            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
+              Made possible by our sponsors, grants, and support
+            </h1>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
-              Through the help of grants and donations, we aim to deliver the service at no cost to our users. If you
-              believe in our work and our mission, please consider donating to help keep it free for individuals.
+              We're a&nbsp;
+              <strong>
+                <GradientText>not-for-profit</GradientText>
+              </strong>
+              &nbsp;organization so through the help of grants and donations we aim to deliver the service at no cost to
+              our users. If you believe in our work and our mission, please consider sponsoring and supporting us so we
+              can continue to improve and deliver best-in-class collaborative software for everyone.
             </p>
 
             <div className={css(styles.titleButtons)}>
@@ -268,17 +282,6 @@ const HomePage: React.FC = () => {
                 &nbsp;&nbsp;Sponsor us on Patreon
               </Button> */}
             </div>
-          </section>
-
-          <section
-            className={css(styles.section, isMobile && styles.sectionMobile, isWide && styles.sectionWide)}
-            id="sponsors"
-          >
-            <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
-              Made possible by our sponsors, grants, and support
-            </h1>
-
-            <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>Coming soon</p>
           </section>
 
           <section
