@@ -12,3 +12,7 @@ export const FEATURES = {
 export const SCREENSHOTS = {
   main: urlify("screenshots/main.png"),
 };
+
+export const LOGOS = {
+  sentry: urlify("logos/sentry.png"),
+};

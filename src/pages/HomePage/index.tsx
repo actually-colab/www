@@ -5,12 +5,13 @@ import { Button, Icon } from "rsuite";
 
 import { palette, spacing } from "../../constants/theme";
 import { HEADER_HEIGHT, PAGE_WIDTH } from "../../constants/dimensions";
-import { FEATURES, SCREENSHOTS } from "../../constants/images";
+import { FEATURES, LOGOS, SCREENSHOTS } from "../../constants/images";
 import { openDevpost, openGithubDesktop, openYoutube } from "../../utils/redirect";
 import { MediaQueryContext } from "../../contexts";
 import { Footer, GradientText, Header } from "../../components";
 import Feature from "./Feature";
 import PricingContainer from "./PricingContainer";
+import Supporter from "./Supporter";
 
 const styles = StyleSheet.create({
   container: {
@@ -106,6 +107,14 @@ const styles = StyleSheet.create({
   },
   pricingSectionMobile: {
     flexDirection: "column",
+    alignItems: "center",
+  },
+  supporters: {
+    width: "100%",
+    marginBottom: spacing.DEFAULT * 2,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
     alignItems: "center",
   },
 });
@@ -258,8 +267,17 @@ const HomePage: React.FC = () => {
             id="sponsors"
           >
             <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
-              Made possible by our sponsors, grants, and support
+              Thank you to our sponsors and support from the Open Source community
             </h1>
+
+            <div className={css(styles.supporters)}>
+              <Supporter
+                name="Sentry"
+                tooltip="Sentry's Sponsored plan for error monitoring allows us to detect and resolve issues and deliver the smoothest possible experience for our users"
+                link="https://sentry.io/"
+                image={LOGOS.sentry}
+              />
+            </div>
 
             <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>
               We're a&nbsp;
