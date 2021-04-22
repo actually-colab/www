@@ -3,7 +3,15 @@ import { StyleSheet, css } from "aphrodite";
 import { Icon, IconProps } from "rsuite";
 
 import { palette, spacing } from "../constants/theme";
-import { BLOG_URI, DEVPOST_URI, DOCS_URI, GITHUB_URI, YOUTUBE_URI } from "../utils/redirect";
+import {
+  BLOG_URI,
+  BTINCHER_URI,
+  DEVPOST_URI,
+  DOCS_URI,
+  GITHUB_URI,
+  JTAYLORCHANG_URI,
+  YOUTUBE_URI,
+} from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
 import { PAGE_WIDTH } from "../constants/dimensions";
 import { GradientText } from ".";
@@ -159,12 +167,12 @@ const Footer: React.FC = () => {
             {
               title: "Jeff Taylor-Chang",
               icon: "external-link",
-              url: "https://jefftc.com/",
+              url: JTAYLORCHANG_URI,
             },
             {
               title: "Bailey Tincher",
               icon: "external-link",
-              url: "https://btin.io/",
+              url: BTINCHER_URI,
             },
           ]}
         />

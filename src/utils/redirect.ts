@@ -34,6 +34,16 @@ export const DOCS_URI = "https://docs.actuallycolab.org/docs/";
 export const PATREON_URI = "https://www.patreon.com/actuallycolab";
 
 /**
+ * The link to jtaylorchang website
+ */
+export const JTAYLORCHANG_URI = "https://jefftc.com/";
+
+/**
+ * The link to btincher website
+ */
+export const BTINCHER_URI = "https://btin.io/";
+
+/**
  * Open a link in a new tab
  */
 export const openLink = (link: string): void => {

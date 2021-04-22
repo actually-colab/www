@@ -3,17 +3,22 @@ import { StyleSheet, css } from "aphrodite";
 import { useMediaQuery } from "react-responsive";
 import { Button, Icon } from "rsuite";
 
-import { palette, spacing } from "../constants/theme";
-import { HEADER_HEIGHT, PAGE_WIDTH } from "../constants/dimensions";
-import { openDevpost, openGithubDesktop, openYoutube } from "../utils/redirect";
-import { MediaQueryContext } from "../contexts";
-import { Footer, GradientBorderContainer, GradientText, Header } from "../components";
-import Screenshot from "../assets/screenshot.png";
-import ChatFeature from "../assets/chat.png";
-import OutputsFeature from "../assets/outputs.png";
-import GatewayFeature from "../assets/gateway.png";
-import ImportFeature from "../assets/import.png";
-import ShareFeature from "../assets/share.png";
+import { palette, spacing } from "../../constants/theme";
+import { HEADER_HEIGHT, PAGE_WIDTH } from "../../constants/dimensions";
+import { BTINCHER_URI, JTAYLORCHANG_URI, openDevpost, openGithubDesktop, openYoutube } from "../../utils/redirect";
+import { MediaQueryContext } from "../../contexts";
+import { Footer, GradientText, Header } from "../../components";
+import Screenshot from "../../assets/screenshot.png";
+import ChatFeature from "../../assets/chat.png";
+import OutputsFeature from "../../assets/outputs.png";
+import GatewayFeature from "../../assets/gateway.png";
+import ImportFeature from "../../assets/import.png";
+import ShareFeature from "../../assets/share.png";
+import jtaylorchang from "../../assets/jtaylorchang.jpg";
+import btincher from "../../assets/btincher.jpg";
+import Feature from "./Feature";
+import Member from "./Member";
+import PricingContainer from "./PricingContainer";
 
 const styles = StyleSheet.create({
   container: {
@@ -87,58 +92,6 @@ const styles = StyleSheet.create({
   secondaryTitleTextMobile: {
     fontSize: 24,
   },
-  feature: {
-    marginTop: spacing.DEFAULT * 5,
-    width: "100%",
-    display: "flex",
-    flexDirection: "row",
-  },
-  featureLeft: {},
-  featureRight: {
-    flexDirection: "row-reverse",
-  },
-  featureMobile: {
-    flexDirection: "column",
-  },
-  featureTextContainer: {
-    flex: 1,
-    padding: spacing.DEFAULT,
-  },
-  featureTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "black",
-  },
-  featureTitleMobile: {
-    fontSize: 16,
-  },
-  featureDescription: {
-    fontSize: 16,
-    color: palette.GRAY,
-  },
-  featureDescriptionMobile: {
-    fontSize: 14,
-  },
-  featureImageContainer: {
-    flex: 1,
-    maxHeight: 300,
-    borderRadius: 20,
-    overflow: "hidden",
-    backgroundColor: palette.BASE_FADED,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-end",
-  },
-  featureImageContainerLeft: {
-    marginRight: spacing.DEFAULT,
-  },
-  featureImageContainerRight: {
-    marginLeft: spacing.DEFAULT,
-  },
-  featureImageContainerMobile: {
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
   featureImageRounded: {
     maxWidth: "100%",
     objectFit: "contain",
@@ -164,122 +117,18 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
   },
-  pricingContainer: {
-    marginTop: spacing.DEFAULT * 2,
-    marginLeft: spacing.DEFAULT,
-    marginRight: spacing.DEFAULT,
-    width: 360,
+  memberSection: {
+    marginBottom: spacing.DEFAULT * 2,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "flex-start",
   },
-  pricingContainerMobile: {
-    width: "100%",
-    marginTop: spacing.DEFAULT * 2,
-    marginLeft: "auto",
-    marginRight: "auto",
+  memberSectionMobile: {
+    flexDirection: "column",
+    alignItems: "center",
   },
-  pricingContent: {
-    padding: 20,
-    backgroundColor: "white",
-    borderRadius: 6,
-  },
-  pricingTitleContainer: {},
-  pricingTitle: {
-    fontSize: 20,
-    lineHeight: "100%",
-    color: "black",
-  },
-  pricingTitleMobile: {
-    fontSize: 18,
-  },
-  pricingCost: {},
-  pricingCostValue: {
-    fontSize: 32,
-    lineHeight: "100%",
-    fontWeight: "bold",
-    color: "black",
-  },
-  pricingCostValueMobile: {
-    fontSize: 24,
-  },
-  pricingCostDuration: {
-    marginLeft: 4,
-    fontSize: 16,
-    color: palette.GRAY,
-  },
-  pricingDescription: {
-    marginTop: spacing.DEFAULT,
-    marginBottom: spacing.DEFAULT * 1.5,
-  },
-  pricingFeature: {},
 });
-
-const Feature: React.FC<{
-  title: string;
-  description: string;
-  direction: "left" | "right";
-}> = ({ title, description, direction, children }) => {
-  const { isMobile } = React.useContext(MediaQueryContext);
-
-  return (
-    <div
-      className={css(
-        styles.feature,
-        direction === "left" ? styles.featureLeft : styles.featureRight,
-        isMobile && styles.featureMobile
-      )}
-    >
-      <div
-        className={css(
-          styles.featureImageContainer,
-          direction === "left" ? styles.featureImageContainerLeft : styles.featureImageContainerRight,
-          isMobile && styles.featureImageContainerMobile
-        )}
-      >
-        {children}
-      </div>
-
-      <div className={css(styles.featureTextContainer)}>
-        <p className={css(styles.featureTitle, isMobile && styles.featureTitleMobile)}>{title}</p>
-        <p className={css(styles.featureDescription, isMobile && styles.featureDescriptionMobile)}>{description}</p>
-      </div>
-    </div>
-  );
-};
-
-const PricingContainer: React.FC<{
-  title: string;
-  cost: string;
-  per: string;
-  description: string;
-  features: string[];
-  highlight?: boolean;
-}> = ({ title, cost, per, description, features, highlight = false }) => {
-  const { isMobile } = React.useContext(MediaQueryContext);
-
-  return (
-    <div className={css(styles.pricingContainer, isMobile && styles.pricingContainerMobile)}>
-      <GradientBorderContainer visible={highlight}>
-        <div className={css(styles.pricingContent)}>
-          <div className={css(styles.pricingTitleContainer)}>
-            <p className={css(styles.pricingTitle, isMobile && styles.pricingTitleMobile)}>{title}</p>
-            <p className={css(styles.pricingCost)}>
-              <span className={css(styles.pricingCostValue, isMobile && styles.pricingCostValueMobile)}>{cost}</span>
-              <span className={css(styles.pricingCostDuration)}>/ {per}</span>
-            </p>
-
-            <p className={css(styles.pricingDescription)}>{description}</p>
-
-            {features.map((feature) => (
-              <p key={feature} className={css(styles.pricingFeature)}>
-                <Icon icon="check-circle" style={{ color: palette.PRIMARY }} />
-                &nbsp;&nbsp;{feature}
-              </p>
-            ))}
-          </div>
-        </div>
-      </GradientBorderContainer>
-    </div>
-  );
-};
 
 const HomePage: React.FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
@@ -490,7 +339,15 @@ const HomePage: React.FC = () => {
               Meet our founders
             </h1>
 
-            <p className={css(styles.subtitleText, isMobile && styles.subtitleTextMobile)}>Coming soon</p>
+            <div className={css(styles.memberSection, isMobile && styles.memberSectionMobile)}>
+              <Member
+                name="Jeff Taylor-Chang"
+                description="Lead frontend developer"
+                link={JTAYLORCHANG_URI}
+                image={jtaylorchang}
+              />
+              <Member name="Bailey Tincher" description="Lead backend developer" link={BTINCHER_URI} image={btincher} />
+            </div>
           </section>
         </div>
 
