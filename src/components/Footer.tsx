@@ -55,7 +55,12 @@ const styles = StyleSheet.create({
     lineHeight: "100%",
     fontWeight: "bold",
   },
-  footerSection: {},
+  footerSection: {
+    paddingLeft: spacing.DEFAULT,
+  },
+  footerSectionMobile: {
+    paddingLeft: 0,
+  },
   footerTitle: {
     color: "black",
     marginBottom: spacing.DEFAULT,
@@ -85,7 +90,7 @@ const FooterSection: React.FC<{
   const { isMobile } = React.useContext(MediaQueryContext);
 
   return (
-    <div className={css(styles.footerSection)}>
+    <div className={css(styles.footerSection, isMobile && styles.footerSectionMobile)}>
       <p className={css(styles.footerTitle)}>{title}</p>
       {links.length > 0 && (
         <div className={css(styles.footerLinks)}>
@@ -149,6 +154,7 @@ const Footer: React.FC = () => {
         <FooterSection
           title="Resources"
           links={[
+            { title: "This site is powered by Netlify", icon: "globe2", url: "https://www.netlify.com/" },
             { title: isMobile ? "Jupyter" : "Project Jupyter", icon: "related-map", url: "https://jupyter.org/" },
             { title: isMobile ? "AWS" : "Amazon Web Services", icon: "amazon", url: "https://aws.amazon.com/" },
             { title: "React.js", icon: "external-link", url: "https://reactjs.org/" },
