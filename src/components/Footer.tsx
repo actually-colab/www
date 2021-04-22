@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
   const { isMobile, isWide } = React.useContext(MediaQueryContext);
 
   return (
-    <div className={css(styles.container)}>
+    <section className={css(styles.container)} id="footer">
       <div className={css(styles.content, isMobile && styles.contentMobile, isWide && styles.contentWide)}>
         <div className={css(styles.logoFooter, isMobile && styles.logoFooterMobile)}>
           <FooterSection
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
           ]}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
