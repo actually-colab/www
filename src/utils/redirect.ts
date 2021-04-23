@@ -34,6 +34,11 @@ export const BLOG_URI = "https://docs.actuallycolab.org/blog/";
 export const DOCS_URI = "https://docs.actuallycolab.org/docs/";
 
 /**
+ * The link to the nonprofit linkedin profile
+ */
+export const LINKEDIN_URI = "https://www.linkedin.com/company/actually-colab";
+
+/**
  * The link to the patreon account
  */
 export const PATREON_URI = "https://www.patreon.com/actuallycolab";

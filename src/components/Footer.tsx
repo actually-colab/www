@@ -10,6 +10,7 @@ import {
   DOCS_URI,
   GITHUB_URI,
   JTAYLORCHANG_URI,
+  LINKEDIN_URI,
   NPM_URI,
   YOUTUBE_URI,
 } from "../utils/redirect";
@@ -167,6 +168,11 @@ const Footer: React.FC = () => {
           title="Follow"
           links={[
             // { title: "Patreon", icon: "heart", url: PATREON_URI },
+            {
+              title: "LinkedIn",
+              icon: "linkedin-square",
+              url: LINKEDIN_URI,
+            },
             {
               title: "Jeff Taylor-Chang",
               icon: "linkedin-square",
