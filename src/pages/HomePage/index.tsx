@@ -12,6 +12,7 @@ import { Footer, GradientText, Header } from "../../components";
 import Feature from "./Feature";
 import PricingContainer from "./PricingContainer";
 import Supporter from "./Supporter";
+import Waitlist from "./Waitlist";
 
 const styles = StyleSheet.create({
   container: {
@@ -142,19 +143,21 @@ const HomePage: React.FC = () => {
               What will you build with it?
             </p>
 
+            <Waitlist />
+
+            <img className={css(styles.screenshot)} src={SCREENSHOTS.main} alt="Actually Colab" />
+
             <div className={css(styles.titleButtons)}>
               <Button className={css(styles.titleButton)} onClick={openYoutube}>
                 <Icon icon="logo-video" />
                 &nbsp;&nbsp;Watch the demo
               </Button>
-              &nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
               <Button className={css(styles.titleButton)} onClick={openDevpost}>
                 <Icon icon="file-text-o" />
                 &nbsp;&nbsp;Read our Devpost
               </Button>
             </div>
-
-            <img className={css(styles.screenshot)} src={SCREENSHOTS.main} alt="Actually Colab" />
           </section>
 
           <section
