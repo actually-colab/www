@@ -273,6 +273,12 @@ const HomePage: React.FC = () => {
 
             <div className={css(styles.supporters)}>
               <Supporter
+                name="Netlify"
+                tooltip="Netlify's Sponsored plan allows us to build and deploy our sites worldwide in an instant"
+                link="https://www.netlify.com/"
+                image={LOGOS.netlify}
+              />
+              <Supporter
                 name="Sentry"
                 tooltip="Sentry's Sponsored plan for error monitoring allows us to detect and resolve issues and deliver the smoothest possible experience for our users"
                 link="https://sentry.io/"
