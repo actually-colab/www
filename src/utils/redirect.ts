@@ -9,9 +9,14 @@ export const GITHUB_URI = "https://github.com/actually-colab";
 export const GITHUB_DESKTOP_URI = `${GITHUB_URI}/desktop`;
 
 /**
+ * The link to the NPM organization
+ */
+export const NPM_URI = "https://www.npmjs.com/org/actually-colab";
+
+/**
  * The link to the youtube demo video
  */
-export const YOUTUBE_URI = "https://www.youtube.com/watch?v=ParNlHsbSrY";
+export const YOUTUBE_URI = "https://www.youtube.com/channel/UC4TXU7ZY-T5cBC19tPZ8p_Q";
 
 /**
  * The link to the Hack Illinois devpost

@@ -10,6 +10,7 @@ import {
   DOCS_URI,
   GITHUB_URI,
   JTAYLORCHANG_URI,
+  NPM_URI,
   YOUTUBE_URI,
 } from "../utils/redirect";
 import { MediaQueryContext } from "../contexts";
@@ -147,6 +148,7 @@ const Footer: React.FC = () => {
             { title: "Developer Blog", url: BLOG_URI },
             { title: "Developer Docs", url: DOCS_URI },
             { title: isMobile ? "GitHub Org" : "GitHub Organization", icon: "github", url: GITHUB_URI },
+            { title: isMobile ? "NPM" : "NPM Packages", icon: "code", url: NPM_URI },
             { title: isMobile ? "HackIL Devpost" : "HackIllinois Devpost", icon: "trophy", url: DEVPOST_URI },
             { title: "YouTube", icon: "youtube-play", url: YOUTUBE_URI },
           ]}
