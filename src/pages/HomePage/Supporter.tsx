@@ -11,8 +11,12 @@ const styles = StyleSheet.create({
     maxHeight: 120,
     marginLeft: spacing.DEFAULT * 2,
     marginRight: spacing.DEFAULT * 2,
+    marginBottom: spacing.DEFAULT,
   },
-  supporterMobile: {},
+  supporterMobile: {
+    maxWidth: 80,
+    maxHeight: 80,
+  },
   logo: {
     maxWidth: "100%",
     maxHeight: "100%",
