@@ -279,7 +279,7 @@ const HomePage: React.FC = () => {
               />
               <Supporter
                 name="Sentry"
-                tooltip="Sentry's Sponsored plan for error monitoring allows us to detect and resolve issues and deliver the smoothest possible experience for our users"
+                tooltip="Sentry's Sponsored plan allows us to detect and resolve issues and deliver the smoothest possible experience for our users"
                 link="https://sentry.io/"
                 image={LOGOS.sentry}
               />

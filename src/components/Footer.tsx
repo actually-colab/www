@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
           title="Resources"
           links={[
             { title: "This site is powered by Netlify", icon: "globe2", url: "https://www.netlify.com/" },
-            { title: isMobile ? "Jupyter" : "Project Jupyter", icon: "related-map", url: "https://jupyter.org/" },
+            { title: isMobile ? "Jupyter" : "Jupyter Kernel", icon: "related-map", url: "https://ipython.org/" },
             { title: isMobile ? "AWS" : "Amazon Web Services", icon: "amazon", url: "https://aws.amazon.com/" },
             { title: "React.js", icon: "external-link", url: "https://reactjs.org/" },
             { title: "Electron", icon: "external-link", url: "https://www.electronjs.org/" },
