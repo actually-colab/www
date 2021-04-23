@@ -7,10 +7,10 @@ import { MediaQueryContext } from "../../contexts";
 
 const styles = StyleSheet.create({
   supporter: {
-    maxWidth: 120,
-    maxHeight: 120,
-    marginLeft: spacing.DEFAULT * 2,
-    marginRight: spacing.DEFAULT * 2,
+    maxWidth: 100,
+    maxHeight: 100,
+    marginLeft: spacing.DEFAULT / 2,
+    marginRight: spacing.DEFAULT / 2,
     marginBottom: spacing.DEFAULT,
   },
   supporterMobile: {
