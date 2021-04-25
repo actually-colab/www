@@ -6,6 +6,7 @@ import { FormInstance } from "rsuite/lib/Form";
 import { palette, spacing } from "../../constants/theme";
 import { MediaQueryContext } from "../../contexts";
 import { addToWaitlist } from "../../api/waitlist";
+import { WaitlistEmailStorage } from "../../utils/storage";
 
 const styles = StyleSheet.create({
   waitlistContainer: {
@@ -69,11 +70,16 @@ type WaitlistFullFormValue = WaitlistShortFormValue & {
 };
 
 const waitlistShortModel = Schema.Model({
-  email: Schema.Types.StringType().isRequired("Please enter a valid email").isEmail("Please enter a valid email"),
+  email: Schema.Types.StringType()
+    .isRequired("Please enter a valid email")
+    .isEmail("Please enter a valid email")
+    .addRule((value: string) => !WaitlistEmailStorage.has(value.toLowerCase()), "You already joined the waitlist!"),
 });
 
 const waitlistFullModel = Schema.Model({
-  email: Schema.Types.StringType().isEmail("Please enter a valid email"),
+  email: Schema.Types.StringType()
+    .isEmail("Please enter a valid email")
+    .addRule((value: string) => !WaitlistEmailStorage.has(value.toLowerCase()), "You already joined the waitlist!"),
   job: Schema.Types.StringType()
     .maxLength(144, "Please use at most 144 characters")
     .isRequired("This field is required"),
@@ -153,7 +159,13 @@ const Waitlist: React.FC = () => {
       >
         <div className={css(styles.waitlistContainer, isMobile && styles.waitlistContainerMobile)}>
           <div className={css(styles.waitlistInputContainer)}>
-            <FormControl className={css(styles.waitlistInput)} name="email" placeholder="your@email.com" size="lg" />
+            <FormControl
+              className={css(styles.waitlistInput)}
+              name="email"
+              placeholder="your@email.com"
+              type="email"
+              size="lg"
+            />
           </div>
 
           <div className={css(styles.waitlistInlineButton)}>

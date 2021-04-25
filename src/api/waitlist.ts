@@ -1,4 +1,5 @@
 import axios from "axios";
+import { WaitlistEmailStorage } from "../utils/storage";
 import { BASE_URI } from "./base";
 
 /**
@@ -12,7 +13,13 @@ export const addToWaitlist = async (requestPayload: {
   try {
     const res = await axios.post(`${BASE_URI}/waitlist`, requestPayload);
 
-    return res.status === 200;
+    const success = res.status === 200;
+
+    if (success) {
+      WaitlistEmailStorage.add(requestPayload.email.toLowerCase());
+    }
+
+    return success;
   } catch (error) {
     console.error(error);
     return false;
