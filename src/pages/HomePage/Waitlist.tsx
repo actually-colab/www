@@ -209,8 +209,8 @@ const Waitlist: React.FC = () => {
         <Message
           className={css(styles.message, isMobile && styles.messageMobile)}
           type="success"
-          title="Congrats, we added you to the waitlist!"
-          description="We'll email you when a spot becomes available"
+          title="You're on the waitlist!"
+          description="Hang tight, we'll email you when a spot becomes available"
           closable
           onClose={() => setVisibleMessage("")}
         />
