@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, css } from "aphrodite";
-import { Animation, Button, ControlLabel, Form, FormControl, FormGroup, Notification, Schema } from "rsuite";
+import { Animation, Button, ControlLabel, Form, FormControl, FormGroup, Message, Schema } from "rsuite";
 import { FormInstance } from "rsuite/lib/Form";
 
 import { palette, spacing } from "../../constants/theme";
@@ -48,6 +48,15 @@ const styles = StyleSheet.create({
   fullFormContainerMobile: {
     width: "100%",
   },
+  message: {
+    width: 400,
+    marginTop: spacing.DEFAULT * 2,
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  messageMobile: {
+    width: "100%",
+  },
 });
 
 type WaitlistShortFormValue = {
@@ -89,6 +98,7 @@ const Waitlist: React.FC = () => {
   });
 
   const [showFullForm, setShowFullForm] = React.useState<boolean>(false);
+  const [visibleMessage, setVisibleMessage] = React.useState<"success" | "error" | "">("");
 
   const handleWaitlistFormSubmit = React.useCallback(
     async (_?: any, event?: React.FormEvent<HTMLFormElement>) => {
@@ -105,16 +115,9 @@ const Waitlist: React.FC = () => {
         if (success) {
           setShowFullForm(false);
 
-          Notification.success({
-            title: "Added to the waitlist!",
-            description: "We'll email you when a spot becomes available",
-            duration: 6000,
-          });
+          setVisibleMessage("success");
         } else {
-          Notification.error({
-            title: "Problem adding you to the waitlist!",
-            duration: 4000,
-          });
+          setVisibleMessage("error");
         }
       } else {
         if (!waitlistShortFormRef.current?.check()) {
@@ -201,6 +204,27 @@ const Waitlist: React.FC = () => {
           </div>
         </Form>
       </Animation.Collapse>
+
+      {visibleMessage === "success" && (
+        <Message
+          className={css(styles.message, isMobile && styles.messageMobile)}
+          type="success"
+          title="Congrats, we added you to the waitlist!"
+          description="We'll email you when a spot becomes available"
+          closable
+          onClose={() => setVisibleMessage("")}
+        />
+      )}
+      {visibleMessage === "error" && (
+        <Message
+          className={css(styles.message, isMobile && styles.messageMobile)}
+          type="error"
+          title="Uh oh!"
+          description="We ran into an issue trying to add you to the waitlist, try again later!"
+          closable
+          onClose={() => setVisibleMessage("")}
+        />
+      )}
     </React.Fragment>
   );
 };
