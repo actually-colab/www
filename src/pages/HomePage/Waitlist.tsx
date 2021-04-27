@@ -162,7 +162,7 @@ const Waitlist: React.FC = () => {
             <FormControl
               className={css(styles.waitlistInput)}
               name="email"
-              placeholder="your@email.com"
+              placeholder="you@email.com"
               type="email"
               size="lg"
             />
