@@ -25,6 +25,10 @@ Website landing page and authentication redirect for [@actually-colab](https://g
 - `yarn eslint` to lint with eslint
 - `yarn validate` to verify TypeScript with TSC
 
+## Docs
+
+See [docs and guides here](https://docs.actuallycolab.org)
+
 ## Backers
 
 Support us with monthly donations to help us continue development and keep the service free for all!
