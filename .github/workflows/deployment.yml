@@ -21,7 +21,7 @@ jobs:
       - name: Install docs dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build Docs
+      - name: Build site
         run: yarn build
 
       - name: Deploy
