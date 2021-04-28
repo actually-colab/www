@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 12
 
-      - name: Install docs dependencies
+      - name: Install dependencies
         run: yarn install --frozen-lockfile
 
       - name: Build site
