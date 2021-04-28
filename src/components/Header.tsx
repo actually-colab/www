@@ -95,7 +95,7 @@ const links: {
   { title: "Blog", url: BLOG_URI },
   { title: "Documentation", url: DOCS_URI },
   { title: "Open Source", url: GITHUB_URI },
-  // { title: "Sponsor Us", url: PATREON_URI },
+  // { title: "Sponsor Us", url: OPEN_COLLECTIVE_URI },
 ];
 
 const Header: React.FC = () => {

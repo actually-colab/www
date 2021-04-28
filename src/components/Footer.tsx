@@ -167,6 +167,7 @@ const Footer: React.FC = () => {
         <FooterSection
           title="Follow"
           links={[
+            // { title: "Open Collective", icon: "heart", url: OPEN_COLLECTIVE_URI },
             // { title: "Patreon", icon: "heart", url: PATREON_URI },
             {
               title: "LinkedIn",

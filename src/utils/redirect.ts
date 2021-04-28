@@ -44,6 +44,11 @@ export const LINKEDIN_URI = "https://www.linkedin.com/company/actually-colab";
 export const PATREON_URI = "https://www.patreon.com/actuallycolab";
 
 /**
+ * The link to the open collective account
+ */
+export const OPEN_COLLECTIVE_URI = "https://opencollective.com/actuallycolab";
+
+/**
  * The link to jtaylorchang website
  */
 export const JTAYLORCHANG_URI = "https://jefftc.com/";
@@ -69,3 +74,5 @@ export const openYoutube = (): void => openLink(YOUTUBE_URI);
 export const openDevpost = (): void => openLink(DEVPOST_URI);
 
 export const openPatreon = (): void => openLink(PATREON_URI);
+
+export const openOpenCollective = (): void => openLink(OPEN_COLLECTIVE_URI);

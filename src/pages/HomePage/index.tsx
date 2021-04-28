@@ -304,11 +304,31 @@ const HomePage: React.FC = () => {
                 &nbsp;&nbsp;Star us on GitHub
               </Button>
               {/* &nbsp;&nbsp;
+              <Button className={css(styles.titleButton)} appearance="primary" onClick={openOpenCollective}>
+                <Icon icon="heart" />
+                &nbsp;&nbsp;Sponsor us on Open Collective
+              </Button> */}
+              {/* &nbsp;&nbsp;
               <Button className={css(styles.titleButton)} appearance="primary" onClick={openPatreon}>
                 <Icon icon="heart" />
                 &nbsp;&nbsp;Sponsor us on Patreon
               </Button> */}
             </div>
+
+            {/* <div className={css(styles.titleButtons)}>
+              <object
+                aria-labelledby="test"
+                type="image/svg+xml"
+                data="https://opencollective.com/actuallycolab/tiers/backer.svg?avatarHeight=48"
+                style={{ maxWidth: "100%" }}
+              />
+              <object
+                aria-labelledby="test"
+                type="image/svg+xml"
+                data="https://opencollective.com/actuallycolab/tiers/sponsor.svg?avatarHeight=48"
+                style={{ maxWidth: "100%" }}
+              />
+            </div> */}
           </section>
 
           <section
