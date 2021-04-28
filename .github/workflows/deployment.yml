@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  docs:
+  www:
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
