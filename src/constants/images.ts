@@ -15,4 +15,5 @@ export const SCREENSHOTS = {
 export const LOGOS = {
   netlify: urlify("logos/netlify.png"),
   sentry: urlify("logos/sentry.png"),
+  osc: urlify("logos/osc.png"),
 };

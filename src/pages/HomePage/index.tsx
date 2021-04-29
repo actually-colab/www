@@ -275,6 +275,12 @@ const HomePage: React.FC = () => {
 
             <div className={css(styles.supporters)}>
               <Supporter
+                name="Open Source Collective"
+                tooltip="Open Source Collective hosts us, giving us the ability to raise money to help cover our development and server costs"
+                link="https://opencollective.com/opensource"
+                image={LOGOS.osc}
+              />
+              <Supporter
                 name="Netlify"
                 tooltip="Netlify's Sponsored plan allows us to build and deploy our sites worldwide in an instant"
                 link="https://www.netlify.com/"
