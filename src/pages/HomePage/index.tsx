@@ -120,6 +120,12 @@ const styles = StyleSheet.create({
   },
 });
 
+const AIDA_LINK = (
+  <a href="https://aida.acm.illinois.edu/" target="_blank" rel="noreferrer">
+    SIG AIDA
+  </a>
+);
+
 const HomePage: React.FC = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const isWide = useMediaQuery({ query: "(min-width: 1600px)" });
@@ -348,16 +354,17 @@ const HomePage: React.FC = () => {
             <p className={css(styles.bodyText, isMobile && styles.bodyTextMobile)}>
               One of the biggest challenges, and one that we are acutely aware of now more than ever, is that it can be
               really hard to deliver the same learning experience remotely. One way that a lot of students got exposure
-              to areas of CS is through workshops like the ones hundreds attended each year run by ADSA on campus. Those
-              workshops would offer an opportunity for younger students to interact and work with their peers, following
-              along with the presentation and seeing their code run before their own eyes. Unfortunately, the tools on
-              the market for collaborating on code and running workshops are either built only for a handful of users or
-              cost exorbitant amounts of money. Inspired by our experiences working directly with professors, hearing
-              their frustrations with what's available to them today, and our experiences running workshops through
-              ADSA, we aimed to build something better and to make it completely Open Source and free for individuals.
-              We want students anywhere around the world to be able to join workshops with hundreds or thousands of
-              their peers and learn in real-time. We want students to be able to follow along with the teacher during
-              class and see for themselves how the code works. So we set out to make that a reality.
+              to areas of CS is through workshops like the ones hundreds attended each year run by {AIDA_LINK} on
+              campus. Those workshops would offer an opportunity for younger students to interact and work with their
+              peers, following along with the presentation and seeing their code run before their own eyes.
+              Unfortunately, the tools on the market for collaborating on code and running workshops are either built
+              only for a handful of users or cost exorbitant amounts of money. Inspired by our experiences working
+              directly with professors, hearing their frustrations with what's available to them today, and our
+              experiences running workshops through {AIDA_LINK}, we aimed to build something better and to make it
+              completely Open Source and free for individuals. We want students anywhere around the world to be able to
+              join workshops with hundreds or thousands of their peers and learn in real-time. We want students to be
+              able to follow along with the teacher during class and see for themselves how the code works. So we set
+              out to make that a reality.
             </p>
 
             <p
