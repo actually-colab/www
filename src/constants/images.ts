@@ -16,4 +16,5 @@ export const LOGOS = {
   netlify: urlify("logos/netlify.png"),
   sentry: urlify("logos/sentry.png"),
   osc: urlify("logos/osc.png"),
+  acm: urlify("logos/acm.png"),
 };

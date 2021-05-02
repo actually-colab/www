@@ -281,6 +281,12 @@ const HomePage: React.FC = () => {
 
             <div className={css(styles.supporters)}>
               <Supporter
+                name="ACM@UIUC"
+                tooltip="ACM at the University of Illinois at Urbana-Champaign supports us as a project so they can use the platform for hosting Python workshops"
+                link="https://acm.illinois.edu/"
+                image={LOGOS.acm}
+              />
+              <Supporter
                 name="Open Source Collective"
                 tooltip="Open Source Collective hosts us, giving us the ability to raise money to help cover our development and server costs"
                 link="https://opencollective.com/opensource"
