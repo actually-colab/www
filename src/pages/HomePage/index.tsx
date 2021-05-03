@@ -287,6 +287,12 @@ const HomePage: React.FC = () => {
                 image={LOGOS.acm}
               />
               <Supporter
+                name="University of Illinois"
+                tooltip="Sponsored by a professor at the University of Illinois at Urbana-Champaign to use the project in graduate level CS courses"
+                link="https://cs.illinois.edu/"
+                image={LOGOS.illinois}
+              />
+              <Supporter
                 name="Open Source Collective"
                 tooltip="Open Source Collective hosts us, giving us the ability to raise money to help cover our development and server costs"
                 link="https://opencollective.com/opensource"

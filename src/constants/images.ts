@@ -17,4 +17,5 @@ export const LOGOS = {
   sentry: urlify("logos/sentry.png"),
   osc: urlify("logos/osc.png"),
   acm: urlify("logos/acm.png"),
+  illinois: urlify("logos/illinois.png"),
 };
