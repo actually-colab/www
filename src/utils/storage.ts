@@ -1,15 +1,15 @@
 /**
  * Make a storage object with CRUD functions
  */
-export const buildLocalStorage = (
+export const buildLocalStorage = <T extends string>(
   key: string
 ): {
-  get: () => string | null;
-  set: (value: string) => void;
+  get: () => T | null;
+  set: (value: T) => void;
   remove: () => void;
 } => ({
-  get: () => localStorage.getItem(key),
-  set: (value: string) => localStorage.setItem(key, value),
+  get: (): T | null => localStorage.getItem(key) as T | null,
+  set: (value: T) => localStorage.setItem(key, value),
   remove: () => localStorage.removeItem(key),
 });
 
