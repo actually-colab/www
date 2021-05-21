@@ -276,7 +276,7 @@ const HomePage: React.FC = () => {
             id="sponsors"
           >
             <h1 className={css(styles.secondaryTitleText, isMobile && styles.secondaryTitleTextMobile)}>
-              Thank you to our sponsors and support from the Open Source community
+              Thanks to our sponsors and support from the Open Source community
             </h1>
 
             <div className={css(styles.supporters)}>
