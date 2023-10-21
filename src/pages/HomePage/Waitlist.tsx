@@ -165,11 +165,12 @@ const Waitlist: React.FC = () => {
               placeholder="you@email.com"
               type="email"
               size="lg"
+              readOnly
             />
           </div>
 
           <div className={css(styles.waitlistInlineButton)}>
-            <Button block size="lg" onClick={showFullForm ? handleWaitlistCancel : handleWaitlistFormSubmit}>
+            <Button block size="lg" disabled onClick={showFullForm ? handleWaitlistCancel : handleWaitlistFormSubmit}>
               {showFullForm ? "Cancel" : "Join the waitlist"}
             </Button>
           </div>

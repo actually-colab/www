@@ -76,6 +76,14 @@ const styles = StyleSheet.create({
     maxWidth: "100%",
     objectFit: "contain",
   },
+  disclaimerText: {
+    fontSize: 14,
+    textAlign: "center",
+    color: palette.GRAY,
+  },
+  disclaimerTextMobile: {
+    fontSize: 12,
+  },
   secondaryTitleText: {
     marginBottom: 32,
     fontSize: 48,
@@ -152,6 +160,16 @@ const HomePage: React.FC = () => {
             <Waitlist />
 
             <img className={css(styles.screenshot)} src={SCREENSHOTS.main} alt="Actually Colab" />
+
+            <p className={css(styles.disclaimerText, isMobile && styles.disclaimerTextMobile)}>
+              Disclaimer:{" "}
+              <span style={{ fontWeight: "bold" }}>
+                <GradientText>actually colab</GradientText>
+              </span>{" "}
+              has no affiliation with Google Colab. It was created in a few months by two undergrads in 2021 as a
+              research project before Jupyter added the feature. The editor is now offline and this site remains for
+              illustration purposes only.
+            </p>
 
             <div className={css(styles.titleButtons)}>
               <Button className={css(styles.titleButton)} onClick={openYoutube}>
